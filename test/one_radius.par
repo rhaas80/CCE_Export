@@ -89,7 +89,9 @@ TwoPunctures::TP_Tiny    = 1.0e-2
 
 TwoPunctures::verbose = no
 
-
+TwoPunctures::npoints_a = 15
+TwoPunctures::npoints_b = 15
+TwoPunctures::npoints_phi = 8
 
 ActiveThorns = "ML_BSSN ML_BSSN_Helper NewRad"
 

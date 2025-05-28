@@ -1,7 +1,7 @@
 POSTPROC cce_export_hdf5_to_ascii cceh5$
 EXTENSIONS cceh5
 
-TEST multiple_radii
+TEST advanced_features
 {
-  ABSTOL 1e-11 R5.00.h5$
+  ABSTOL 1e-11 R5.00.cceh5$
 }
