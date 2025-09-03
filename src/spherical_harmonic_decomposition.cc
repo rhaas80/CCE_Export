@@ -78,8 +78,10 @@ void Integrate(int array_size, int ntheta, int nphi, vector<CCTK_REAL> &array1r,
   CCTK_REAL dph = ph[iu] - ph[il];
 
   // Construct an array for the real integrand
-  static auto fr = std::make_unique<CCTK_REAL []>(array_size);
-  static auto fi = std::make_unique<CCTK_REAL []>(array_size);
+  static std::vector<CCTK_REAL> fr;
+  static std::vector<CCTK_REAL> fi;
+  fr.resize(array_size);
+  fi.resize(array_size);
 
   // the below calculations take the integral of conj(array1)*array2*sin(th)
   for (int i = 0; i < array_size; i++) {
@@ -92,8 +94,8 @@ void Integrate(int array_size, int ntheta, int nphi, vector<CCTK_REAL> &array1r,
         CCTK_WARN_ABORT,
         "The Simpson integration method requires even ntheta and even nphi");
   }
-  *outre = Simpson2DIntegral(fr.get(), ntheta, nphi, dth, dph);
-  *outim = Simpson2DIntegral(fi.get(), ntheta, nphi, dth, dph);
+  *outre = Simpson2DIntegral(fr.data(), ntheta, nphi, dth, dph);
+  *outim = Simpson2DIntegral(fi.data(), ntheta, nphi, dth, dph);
 }
 
 void Decompose_Spherical_Harmonics(
