@@ -1,13 +1,5 @@
 #include "h5_export.hh"
 
-#if defined __cpp_lib_filesystem && __cpp_lib_filesystem < 201703L
-#include <experimental/filesystem>
-namespace fs = std::experimental::filesystem;
-#else
-#include <filesystem>
-namespace fs = std::filesystem;
-#endif
-
 namespace CCE_export {
 
 using std::string;
@@ -172,11 +164,11 @@ void Output_Decomposed_Metric_Data(
   ostringstream basename;
   basename << base_file_name << "R" << setiosflags(ios::fixed) << setprecision(2)
            << rad << "." << extension;
-  string output_name = (fs::path(my_out_dir) / basename.str()).string();
+  string output_name = string(my_out_dir) + "/" + basename.str();
 
   hid_t file;
 
-  if (!fs::exists(output_name) ||
+  if (H5Fis_hdf5(output_name.c_str()) < 0 ||
       (!checked[output_name] && IO_TruncateOutputFiles(cctkGH))) {
     HDF5_ERROR(file =
 	       H5Fcreate(output_name.c_str(), H5F_ACC_TRUNC, H5P_DEFAULT, H5P_DEFAULT));
