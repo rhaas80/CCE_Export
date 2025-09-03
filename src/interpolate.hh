@@ -12,7 +12,8 @@
 
 namespace CCE_export {
 
-using std::vector, std::string;
+using std::vector;
+using std::string;
 
 void Interpolate_On_Sphere_With_Derivatives(
     CCTK_ARGUMENTS, vector<CCTK_REAL> &xs, vector<CCTK_REAL> &ys,

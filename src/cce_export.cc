@@ -9,7 +9,10 @@
 
 namespace CCE_export {
 
-using std::vector, std::string, std::ostringstream, std::ios;
+using std::vector;
+using std::string;
+using std::ostringstream;
+using std::ios;
 
 void CCE_Export(CCTK_ARGUMENTS) {
   DECLARE_CCTK_ARGUMENTS;

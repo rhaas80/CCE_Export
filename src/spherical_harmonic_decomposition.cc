@@ -2,7 +2,9 @@
 
 namespace CCE_export {
 
-using std::sin, std::cos, std::pow;
+using std::sin;
+using std::cos;
+using std::pow;
 
 // Copied from Multipole
 #define idx(xx, yy)                                                            \

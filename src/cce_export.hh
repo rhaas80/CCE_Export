@@ -12,7 +12,8 @@
 
 namespace CCE_export {
 
-using std::vector, std::string;
+using std::vector;
+using std::string;
 
 extern "C" void CCE_Export(CCTK_ARGUMENTS);
 

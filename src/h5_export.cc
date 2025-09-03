@@ -10,7 +10,11 @@ namespace fs = std::filesystem;
 
 namespace CCE_export {
 
-using std::string, std::ostringstream, std::map, std::ios, std::setprecision;
+using std::string;
+using std::ostringstream;
+using std::map;
+using std::ios;
+using std::setprecision;
 
 #define HDF5_ERROR(fn_call)                                                    \
   do {                                                                         \

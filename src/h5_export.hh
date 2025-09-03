@@ -18,7 +18,8 @@
 
 namespace CCE_export {
 
-using std::vector, std::string;
+using std::vector;
+using std::string;
 
 void Create_Dataset(string datasetname, CCTK_REAL *data, int mode_count);
 
