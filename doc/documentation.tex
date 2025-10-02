@@ -74,7 +74,7 @@ for the modes in m-changes-fastest order:
 \section{Numerical Implementation}
 
 To accomplish this, the metric, extrinsic curvature, lapse, shift, dtlapse, and dtshift are interpolated onto spheres
-of the desired radii using \texttt{CCTK_InterpGridArrays}. This interpolater can also return the cartesian derivatives
+of the desired radii using \code{CCTK\_InterpGridArrays}. This interpolater can also return the cartesian derivatives
 which are then used to compute the radial derivatives for the metric, lapse, and shift.
 
 The metric is computed from the extrinsic curvature, lapse, and shift as:
@@ -109,10 +109,10 @@ This thorn can be obtained at \url{https://github.com/deborahferguson/CCE_Export
 
 \subsection{Basic Usage}
 
-The user specifies how many radii they would like to extract at (\texttt{nradii}) and the value of each of those radii 
-in M (\texttt{radius[]}). The user should also specify how often they want to output the data in iterations (\texttt{out\_every}).
-Optionally, the user can also provide a specific location to output the files (\texttt{out\_dir}) as well as the desired 
-number of iterations to preallocate in the h5 files (\texttt{hdf5\_chunk\_size}).
+The user specifies how many radii they would like to extract at (\code{nradii}) and the value of each of those radii
+in M (\code{radius[]}). The user should also specify how often they want to output the data in iterations (\code{out\_every}).
+Optionally, the user can also provide a specific location to output the files (\code{out\_dir}) as well as the desired
+number of iterations to preallocate in the h5 files (\code{hdf5\_chunk\_size}).
 
 \subsection{Interaction With Other Thorns}
 
